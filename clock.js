@@ -131,9 +131,24 @@ function writeTime(displaytime) {
 
     displayText += " of " + months[displaytime.getMonth()] +
 	" "    + displaytime.getFullYear();
-    displayText += " " + displaytime.getHours() +
-	           ":" + displaytime.getMinutes() +
-	           ":" + displaytime.getSeconds();
+
+    var h = displaytime.getHours();
+    if (h >= 10)
+	displayText += " " + h;
+    else
+	displayText += " 0" + h;
+
+    var m = displaytime.getMinutes();
+    if (m >= 10)
+	displayText += ":" + m;
+    else
+	displayText += ":0" + m;
+
+    var s = displaytime.getSeconds();
+    if (s >= 10)
+	displayText += ":" + s;
+    else
+	displayText += ":0" + s;
 
     document.getElementById("time").innerHTML = displayText;
 }
