@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <script type="text/javascript">
+      "use strict"
+      function draw() {
+      var c = document.getElementById("mycanvas");
+      var ctx = c.getContext("2d");
+      ctx.clearRect(0, 0, c.width, c.height); // clear the canvas
+
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+
+      // h is in range 0-24
+      // m is in range 0-60
+      // s is in range 0-60
+      // h : 24 = x * 2*Pi  x = 2*Pi*h/24
+
+      var qsize = Math.min(c.width, c.height)/2 - 4;
+      drawQuadrant(c, ctx, qsize, "rgb(255, 255, 200)", "rgb(0, 0, 0)", 7);
+      // now draw the numbers
+
+      ctx.lineWidth = 1;
+      for (var i = 1; i <= 12; i++) {
+         ctx.beginPath();
+         ctx.fillStyle = "#000000";
+         ctx.font = "42px Calibri";
+         ctx.fillText(+i, Math.sin(2*Math.PI*i/12)*c.width/2*0.8 + c.width/2 - 10,
+			    -Math.cos(2*Math.PI*i/12)*c.height/2*0.8 + c.width/2 + 10);
+      }
+      
+      // finally draw the hands
+      // add a small correction for minutes and hours
+      m += s/60;
+      h += m/60;
+      drawHand(c, ctx, 2*Math.PI*h/12, 0.50*qsize, "rgb(75, 75, 75)",
+                                                   "rgb(0, 0, 0)", 1);
+      drawHand(c, ctx, 2*Math.PI*m/60, 0.84*qsize, "rgb(75, 75, 75)",
+                                                   "rgb(0, 0, 0)", 1);
+      drawHand(c, ctx, 2*Math.PI*s/60, 0.90*qsize, "rgb(255, 75, 75)",
+                                                   "rgb(255, 0, 0)", 1);
+
+      
+      var t = setTimeout(draw, 500);
+      }
+      
+      function drawQuadrant(c, ctx, size, fillcolor, bordercolor, thickness) {
+      ctx.fillStyle = fillcolor;
+      ctx.strokeStyle = bordercolor;
+      ctx.lineWidth = thickness;
+      ctx.beginPath();
+      ctx.arc(c.width/2, c.height/2, size, 0, 2*Math.PI);
+      ctx.stroke();
+      ctx.fill();
+      }
+
+      function drawHand(c, ctx, angle, size, fillcolor, bordercolor, thickness) {
+      ctx.beginPath();
+      ctx.strokeStyle = bordercolor;
+      ctx.fillStyle = fillcolor;
+      ctx.lineWidth = thickness;
+      ctx.moveTo(-Math.sin(angle)*size*0.1 + c.width/2,
+                  Math.cos(angle)*size*0.1 + c.width/2);
+      
+      ctx.lineTo( Math.sin(angle + 0.15)*size*0.1 + c.width/2,
+                 -Math.cos(angle + 0.15)*size*0.1 + c.width/2);
+      
+      ctx.lineTo( Math.sin(angle)*size + c.width/2,
+                 -Math.cos(angle)*size + c.width/2);
+      
+      ctx.lineTo( Math.sin(angle - 0.15)*size*0.1 + c.width/2,
+                 -Math.cos(angle - 0.15)*size*0.1 + c.width/2);
+
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      }
+    </script>
+  </head>
+  <body onload="draw();">
+    <canvas id="mycanvas"
+	    width="500"
+	    height="500"
+	    tabindex="1"
+	    margin="10px 10px 10px 10px">
+      Your browser does not support HTML5 canvas tag. Pleas update browser
+    </canvas>
+  </body>
+</html>
