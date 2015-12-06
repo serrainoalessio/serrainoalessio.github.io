@@ -1,4 +1,4 @@
-#include <stdio.h>
+include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -11,8 +11,10 @@ int main(int argc, char * argv) {
     char fifo[] = "./tmpinfo"; // stack allocated
     char *wd = getcwd(NULL, 0); // heap allocatet
     // (warning getcwd return's value is non-standard, GNU extension)
-    printf("%s\n", wd);
-    fflush(stdout);
+    
+    // not necessary :)
+    // printf("%s\n", wd);
+    // fflush(stdout);
     free(wd);
     
 createfifo:
@@ -32,8 +34,8 @@ createfifo:
         
     if (fork() == 0) { // parent process
         int fd;
-        char * msg = "Hello world\n";
-        fd = open(fifo, O_WRONLY);
+        char msg[] = "Hello world\n";
+        fd = open(fifo, O_WRONLY | O_CREAT);
         write(fd, msg, sizeof(msg));
         close(fd);
         unlink(fifo);
