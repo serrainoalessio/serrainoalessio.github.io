@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <meta content="text/html" charset="utf-8" http-equiv="content-type">
     <title>Calcolo combinatorio</title>
     <style type="text/css">
 p {  
@@ -32,39 +32,39 @@ p {
     </p>
     <h1 style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">L'arte
       del contare</h1>
-    <p>Il calcolo combinatorio è una branca della matematica che si occupa di
+    <p>Il calcolo combinatorio Ã¨ una branca della matematica che si occupa di
       contare in quanti modi si possono ordinare, raggruppare, degli oggetti
-      secondo regole prestabilite. Se la domanda che ti poni è "in quanti modi
+      secondo regole prestabilite. Se la domanda che ti poni Ã¨ "in quanti modi
       posso disporre [...]", oppure "quanti sono [...]" allora molto
-      probabilmente la risposta è nel calcolo combinatorio</p>
+      probabilmente la risposta Ã¨ nel calcolo combinatorio</p>
     <h2 style=" color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">Le
       basi</h2>
     <p>Cominciamo subito con un problema semplice: contare quanti sono i numeri
-      di tre cifre. (Ricordandosi che la prima cifra non può essere zero).<span
+      di tre cifre. (Ricordandosi che la prima cifra non puÃ² essere zero).<span
         class="Apple-converted-space">&nbsp;</span></p>
-    <p>È facile vedere almeno due modi di risolverlo. La prima è una soluzione
+    <p>Ãˆ facile vedere almeno due modi di risolverlo. La prima Ã¨ una soluzione
       non combinatoria. Sappiamo che tutti i numeri di tre cifre sono
-      contemporaneamente maggiori o uguali a 100, e minori di 1000. Quindi è
+      contemporaneamente maggiori o uguali a 100, e minori di 1000. Quindi Ã¨
       sufficiente contare quanti numeri ci sono fra 100 (incluso) e 1000
-      (escluso). Per farlo è sufficiente eseguire la differenza, 1000 - 100 =
+      (escluso). Per farlo Ã¨ sufficiente eseguire la differenza, 1000 - 100 =
       900. quindi ci sono esattamente 900 numeri di 3 cifre.<span class="Apple-converted-space">&nbsp;</span></p>
-    <p>Si può anche ragionare in modo combinatorio: consideriamo il numero di
+    <p>Si puÃ² anche ragionare in modo combinatorio: consideriamo il numero di
       tre cifre come tre caselline, inizialmente vuote. Il problema allora sta
       chiedendo in quanti modi possono essere riempite con le 10 cifre, sapendo
-      che nella prima casella non ci può essere uno zero. Allora inseriamo la
+      che nella prima casella non ci puÃ² essere uno zero. Allora inseriamo la
       prima cifra nella prima casella e questo possiamo farlo in 9 modi diversi.
-      Dopodichè inseriamo anche la seconda cifra. Indipendentemente da come
-      abbiamo scelto la prima è facile capire che nella seconda casellina
+      DopodichÃ¨ inseriamo anche la seconda cifra. Indipendentemente da come
+      abbiamo scelto la prima Ã¨ facile capire che nella seconda casellina
       possiamo inserire sempre 10 cifre (questa volta possiamo mettere anche lo
       zero). In questo caso particolare indipendentemente da come abbiamo scelto
       di riempire la prima casellina possiamo scegliere di riempire la seconda,
-      così pure la terza. Si avranno quindi 10 possibilità anche per la terza
+      cosÃ¬ pure la terza. Si avranno quindi 10 possibilitÃ  anche per la terza
       casella.<span class="Apple-converted-space">&nbsp;</span></p>
     <p>Quindi per ognuno dei 9 modi di scegliere la prima casella ce ne sono 10
       di scegleire la seconda. Esistono 9*10 = 90 modi di scegliere le prime due
       caselle. Per ognuno dei 90 modi di scegliere le prime due caselle esistono
       sempre 10 modi di scegliere la terza. Esistono allora 90*10 = 900 modi di
-      riempire le tre caselle. Poichè le tre caselle riempite rappresentano
+      riempire le tre caselle. PoichÃ¨ le tre caselle riempite rappresentano
       sempre uno ed un solo numero di tre cifre (ed a seconda di come vengono
       riempite li rappresentano tutti) possiamo concludere come prima che
       esistono 900 numeri di tre cifre<span class="Apple-converted-space">.</span></p>
@@ -76,23 +76,23 @@ p {
       BAA, BAB, BAC, BBA, BBB, BBC, BCA, BCB, BCC, CAA, CAB, CAC, CBA, CBB, CBC,
       CCA, CCB, CCC.</p>
     <p>Quindi le contiamo, ed osserviamo che sono esattamente 27. Ma che succede
-      se le lettere per comporre la password fossero 4? Oppure di più? Potrebbe
+      se le lettere per comporre la password fossero 4? Oppure di piÃ¹? Potrebbe
       diventare molto difficile scriverle tutte, si rischierebbe di
       dimenticarsene qualcuna, oppure perdere il conto. Ragioniamo allora come
-      nel problema prima: La prima lettera può essere scelta in 3 modi diversi,
+      nel problema prima: La prima lettera puÃ² essere scelta in 3 modi diversi,
       la seconda in 3 modi diversi, ed anche la terza. Quindi le combinazioni
-      sono 3*3*3=27. Ciò dimostra che prima le abbiamo effettivamente listate
+      sono 3*3*3=27. CiÃ² dimostra che prima le abbiamo effettivamente listate
       tutte. Nel caso in cui le lettere potessero essere scelte fra 4? Diciamo
       A, B, C, e D. Quante password potremmo comporre? Ragioniamo sempre allo
       stesso modo: 4*4*4 = 64. E se fossero 5 le possibli lettere? 5*5*5 = 125.</p>
-    <p>A questo punto il "trucco" è chiaro, e possiamo generalizzare, dicendo
+    <p>A questo punto il "trucco" Ã¨ chiaro, e possiamo generalizzare, dicendo
       che le lettere per la nostra password le scegliamo fra <span class="variable">n</span>
       lettere. Le password sarano allora <span class="variable">n*n*n = n<span
           class="exponent">3</span></span>.</p>
     <p>Ma cosa sarebbe successo se il problema ci avesse chiesto di calcolare
       quante pasword sono composte di 4 lettere scelte fra A, B, e C? La
-      formuletta trovata in precedenza non va più bene, quella funziona solo con
-      password di tre caratteri. Ma il ragionamento è il medesimo, e si conclude
+      formuletta trovata in precedenza non va piÃ¹ bene, quella funziona solo con
+      password di tre caratteri. Ma il ragionamento Ã¨ il medesimo, e si conclude
       che le password cercate sono 3*3*3*3 = 81. Se invece si cercassero le
       password di 5 lettere scelte fra A, B, e C esse sarebbero 3*3*3*3*3 = 243.
       Se invece si cercassero le password di 5 lettere scelte fra A, B, C e D,
@@ -100,26 +100,26 @@ p {
     <p>Allora deduciamo che esiste una formula generale per risolvere problemi
       di questo tipo: <span class="variable">D = n<span class="exponent">k</span></span>.
       Dove <span class="variable">D</span> sono le disposizioni, <span class="variable">n</span>
-      è il numero degli elementi, e <span class="variable">k</span> il numero
+      Ã¨ il numero degli elementi, e <span class="variable">k</span> il numero
       di posti disponibili.</p>
     <p>ATTENZIONE: Numero degli elementi, e numero dei posti non sono la stessa
-      cosa e non sono intercambiabili, ma soprattutto è facile confonderli. Non
-      solo per il significato, ma anche numericamente, poichè in genere <span class="variable"><span
+      cosa e non sono intercambiabili, ma soprattutto Ã¨ facile confonderli. Non
+      solo per il significato, ma anche numericamente, poichÃ¨ in genere <span class="variable"><span
           class="variable">n<span class="exponent">k</span></span> &#8800; n<span class="exponent">k</span></span>.
       La prima formula significa che ho <span class="variable">k</span>
       caselline che riempo con <span class="variable">n</span> elementi, la
       seconda l'opposto. In caso di dubbio (o nel caso in cui non ci si ricordi
-      la formula) può convenire ripetere il ragionamento: ho <span class="variable">k</span>
+      la formula) puÃ² convenire ripetere il ragionamento: ho <span class="variable">k</span>
       caselle da riempire. Nella prima posso mettere <span class="variable">n</span>
       elementi, nella seconda ne posso mettere <span class="variable">n</span>,
-      nella terza <span class="variable">n</span>, e così via fino all'ultima.
-      A questo punto è evidente che ho descritto a parole la formula <span class="variable">n<span
+      nella terza <span class="variable">n</span>, e cosÃ¬ via fino all'ultima.
+      A questo punto Ã¨ evidente che ho descritto a parole la formula <span class="variable">n<span
           class="exponent">k</span></span>.</p>
     <h3>Esercizi</h3>
     <ul>
       <li>Quante password di 10 caratteri si possono formare con i 26 caratteri
         dell'alfabeto maiuscoli e minuscoli ed i 10 numeri? <span id="p1.1" class="solution">[Soluzione]</span></li>
-      <li> Quante password di al più 10 caratteri si possono formare con i 26
+      <li> Quante password di al piÃ¹ 10 caratteri si possono formare con i 26
         caratteri dell'alfabeto maiuscoli e minuscoli ed i 10 numeri? <span id="p1.2"
           class="solution">[Soluzione]</span></li>
       <li>Quanti sono i numeri di 7 cifre che non contengono nessuno zero? <span
@@ -129,13 +129,13 @@ p {
     <p>Supponiamo di dover risolvere il seguente problema: In quanti modi
       disporre le lettere A, B, C, e D su 3 posti senza ripeterle?</p>
     <p>Questo problema presenta subito una grossa differenza con gli altri
-      presentati fin ora, ovvero la possibilità di ripetere gli elementi.
+      presentati fin ora, ovvero la possibilitÃ  di ripetere gli elementi.
       Torniamo allora al classico ragionamento combinatorio: Nella prima casella
       posso inserire 4 lettere, nella seconda ne posso mettere 3, e nella terza
       2. Dopo che ho inserito la prima infatti, indipendentemente da come
       l'abbia scelta, me ne restano sempre 3 da inserire nella seconda casella.
       Ed indipententemente da come ho riempito i primi due posti ho sempre 2
-      lettere per riempire il terzo. Possiamo dire che il numero di modi è 4*3*2
+      lettere per riempire il terzo. Possiamo dire che il numero di modi Ã¨ 4*3*2
       = 24.</p>
     <p>Prima di studiare il caso generale vediamo prima alcuni casi particolari:
       Le permutazioni.</p>
@@ -143,21 +143,21 @@ p {
     <p>Come suggerisce il nome le permutazioni servono a contare il numero di
       modi in cui posso disporre una certa sequenza di elementi. Supponiamo di
       avere 5 matite colorate (tutte diverse), e ci chiediamo in quanti modi
-      possiamo ordinarle sul banco. Ci rendiamo conto che il problema è molto
+      possiamo ordinarle sul banco. Ci rendiamo conto che il problema Ã¨ molto
       simile a quello presentato prima, infatti abbiamo 5 posti, 5 elementi, e
       non possiamo ripetere gli elementi (una volta che ho posato una matita sul
-      banco essa non sarà più disponibile per riempire altri posti). Ragionando
+      banco essa non sarÃ  piÃ¹ disponibile per riempire altri posti). Ragionando
       come prima avremo 5*4*3*2*1 = 120 possibili modi di ordinare le matite sul
       banco.</p>
     <p>Ci accorgiamo che abbiamo moltiplicato tutti i numeri da 5 a 1. In genere
       possiamo affermare che le permutazioni di <span class="variable">n</span>
       oggetti sono <span class="variable">n*(n-1)*(n-2)*(n-3)*...*3*2*1</span>.
       Questa operazione, moltiplicare tutti i numeri da 1, fino ad un certo <span
-        class="variable">n</span> , tornerà molto utile in seguito, quindi
-      conviene dargli un nome ed indicarla con un simbolo più breve: <span class="variable">prodotto
+        class="variable">n</span> , tornerÃ  molto utile in seguito, quindi
+      conviene dargli un nome ed indicarla con un simbolo piÃ¹ breve: <span class="variable">prodotto
         dei numeri interi da 1 a n = n!</span>, e chiameremo questa operazione "<span
         class="variable">fattoriale</span>" (n! si legge n fattoriale). Si sono
-      dimostrate alcune propietà del fattoriale, che ne hanno permesso di
+      dimostrate alcune propietÃ  del fattoriale, che ne hanno permesso di
       estendere la definizione, in particolare si dimostra che 0! = 1. (Anche
       intuitivamente, se ho zero elementi li posso disporre in un solo modo).</p>
     <p>Riassumendo <span class="variable">P = n!</span> Dove P sono le
@@ -170,10 +170,10 @@ p {
     <p>In questo caso ci accorgiamo che la sequenza di moltiplicazioni del
       fattoriale viene "interrotta" quando si sono riempite le postazioni. In
       genere potremmo dire che <span class="vvariable">D =
-        n*(n-1)*(n-2)*...*(n-k+2)*(n-k+1)</span>, che riscritta in forma più
+        n*(n-1)*(n-2)*...*(n-k+2)*(n-k+1)</span>, che riscritta in forma piÃ¹
       compatta con la notazione di fattoriale diventa <span class="variable">D
-        = n!/(n-k)!</span>. Tuttavia questa formula può sembrare macchinosa e
-      poco intuitiva, ecco perchè suggerisco di ragionare singolarmente su ogni
+        = n!/(n-k)!</span>. Tuttavia questa formula puÃ² sembrare macchinosa e
+      poco intuitiva, ecco perchÃ¨ suggerisco di ragionare singolarmente su ogni
       problema piuttosto che cercare di ricondurlo ad una formula nota.</p>
     <h3>Esercizi</h3>
     <ul>
@@ -182,9 +182,9 @@ p {
           class="variable">D = n!/(n-k)!</span>. Dimostrarne l'equivalenza. <span
           id="p2.1" class="solution">[Soluzione]</span> </li>
       <li>Ci sono 10 caramelle colorate (tutte diverse), e 7 bimbi. Ogni bimbo
-        riceverà una sola caramella. In quanti modi posso assegnarle?<br>
+        riceverÃ  una sola caramella. In quanti modi posso assegnarle?<br>
       </li>
-      <li>Qual'è la probabilità di vincere al Superenalotto? (Nota: si
+      <li>Qual'Ã¨ la probabilitÃ  di vincere al Superenalotto? (Nota: si
         estraggono 5 numeri da un pallottoliere di 90) <span id="p2.3s" class="solution">[Suggerimento]</span>
         <span id="p2.3" class="solution">[Soluzione]</span></li>
       <li>Quanti sono gli anagrammi, anche privi di significato, della parola
@@ -201,12 +201,12 @@ p {
         maiuscole, seguite da 3 cifre, seguite ancora da due lettere maiuscole.
         Quante automobili si possono immatricolare sapendo che due automobili
         non possono avere la stessa targa?</li>
-      <li>Diciamo che un numero ha la proprietà X se ogni sua cifra è maggiore
-        della precedente. 123 ha la proprità X, 132 no. Quanti numeri hanno la
-        proprietà X?</li>
-      <li>Un numero ha la proprietà Y se ogni cifra è maggiore o uguale della
-        precedente. Per esempio 1128 ha la proprietà Y, ma non 1025. Quanti
-        numeri di esattamente 5 cifre hanno la proprietà Y?</li>
+      <li>Diciamo che un numero ha la proprietÃ  X se ogni sua cifra Ã¨ maggiore
+        della precedente. 123 ha la propritÃ  X, 132 no. Quanti numeri hanno la
+        proprietÃ  X?</li>
+      <li>Un numero ha la proprietÃ  Y se ogni cifra Ã¨ maggiore o uguale della
+        precedente. Per esempio 1128 ha la proprietÃ  Y, ma non 1025. Quanti
+        numeri di esattamente 5 cifre hanno la proprietÃ  Y?</li>
       <li>Quante sono le stringhe di 7 lettere, scelte fra A, B, e C, tali che
         ogni carattere sia diverso da quello che lo precede?</li>
       <li>Quante sono le stringhe di 7 lettere, scelte fra A, B e C, tali che
