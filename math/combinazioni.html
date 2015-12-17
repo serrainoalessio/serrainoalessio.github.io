@@ -1,0 +1,42 @@
+<!DOCTYPE="HTML5">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Combinazioni</title>
+    </head>
+    <body>
+        <h1>L'arte del contare</h1>
+        <p>
+            Il calcolo combinatorio è una branca della matematica che si occupa
+            di contare in quanti modi si possono ordinare, raggruppare,
+            degli oggetti secondo regole prestabilite. Se la domanda che ti poni
+            è "in quanti modi posso disporre [...]", oppure "quanti sono [...]"
+            allora molto probabilmente la risposta è nel calcolo combinatorio
+        </p>
+        <h1>Le basi</h1>
+        <p>
+            Cominciamo subito con un problema semplice: contare quanti sono i numeri di tre cifre.
+            (Ricordandosi che la prima cifra non può essere zero). <br>
+            È facile vedere almeno due modi di risolverlo. La prima è una soluzione non combinatoria.
+            Sappiamo che tutti i numeri di tre cifre sono contemporaneamente maggiori o uguali a 100,
+            e minori di 1000. Quindi è sufficiente contare quanti numeri ci sono fra 100 (incluso)
+            e 1000 (escluso). Per farlo è sufficiente eseguire la differenza, 1000 - 100 = 900.
+            quindi ci sono esattamente 900 numeri di 3 cifre. <br>
+            Si può anche ragionare in modo combinatorio: consideriamo il numero di tre cifre come tre
+            caselline, inizialmente vuote. Il problema allora sta chiedendo in quanti modi possono essere
+            riempite con le 10 cifre, sapendo che nella prima casella non ci può essere uno zero.
+            Allora inseriamo la prima cifra nella prima casella e questo possiamo farlo in 9 modi diversi.
+            Dopodichè inseriamo anche la seconda cifra. Indipendentemente da come abbiamo scelto la prima è
+            facile capire che nella seconda casellina possiamo inserire sempre 10 cifre (questa volta possiamo
+            mettere anche lo zero). In questo caso particolare indipendentemente da come abbiamo scelto di
+            riempire la prima casellina possiamo scegliere di riempire la seconda, così pure la terza.
+            Si avranno quindi 10 possibilità anche per la terza casella. <br>
+            Quindi per ognuno dei 9 modi di scegliere la prima casella ce ne sono 10 di scegleire la seconda.
+            Esistono 9*10 = 90 modi di scegliere le prime due caselle.
+            Per ognuno dei 90 modi di scegliere le prime due caselle esistono sempre 10 modi di scegliere la terza.
+            Esistono allora 90*10 = 900 modi di riempire le tre caselle. Poichè le tre caselle riempite rappresentano
+            sempre uno ed un solo numero di tre cifre (ed a seconda di come vengono riempite li rappresentano tutti)
+            possiamo concludere come prima che esistono 900 numeri di tre cifre <br>
+        </p>
+    </body>
+</html>
