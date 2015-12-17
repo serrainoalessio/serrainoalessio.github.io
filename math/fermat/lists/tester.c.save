@@ -1,0 +1,37 @@
+qqqqqqq
+
+
+
+
+
+
+
+
+
+
+
+
+
+qqqqqqqqqqqqstdio.h>
+#include <gmp.h>
+#include "list.h"
+
+void cp_helper(void * destination, const void * source) {
+  // Must init destination
+  mpz_init_set(*(mpz_t*)destination, *(mpz_t*)source);
+}
+
+void destructor_helper(void * item) {
+  mpz_clear(*(mpz_t*)item);
+}
+
+int main(int argc, char * argv[]) {
+  array_t sample_array;
+  mpz_t sample;
+  array_init(&sample_array, 0, sizeof(sample));
+
+  mpz_init_set_ui(sample, 10);
+  array_add(&sample_array, cp_helper, &sample);
+  mpz_clear(sample);
+  array_clear(&sample_array, destructor_helper);
+}

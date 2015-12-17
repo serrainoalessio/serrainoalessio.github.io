@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <gmp.h>
+#include "list.h"
+
+void cp(void * destination, const void * source) {
+  // Must init destination
+  mpz_init_set(*(mpz_t*)destination, *(mpz_t*)source);
+}
+
+int main(int argc, char * argv[]) {
+  
+}

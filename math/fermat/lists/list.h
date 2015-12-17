@@ -1,0 +1,44 @@
+#ifndef LIST_H
+#define LIST_H
+
+/*
+typedef struct {
+  size_t len;
+  mpz_t * list;
+} mpzlist_t;
+
+typedef struct {
+  size_t len;
+  size_t alloc;
+  mpzlist_t * lists;
+} modtable_t;
+
+typedef struct {
+  mpz_t start;
+  mpzlist_t table;
+} add_t;
+*/
+
+typedef struct {
+  size_t alloc, len;
+  size_t size; // size of each data
+  void * data;
+} array_t;
+
+typedef void* array_iterator_t; // iterator for the array type
+
+void array_init(array_t * list, size_t alloc, size_t size);
+void array_add(array_t * list, void (*cp)(void*, const void*), void * item);
+void array_clear(array_t * list, void (*destructor)(void*));
+
+// iterator
+array_iterator_t array_begin(const array_t* array);
+array_iterator_t array_end(const array_t* array);
+void iterator_next(const array_t* array, array_iterator_t * iterator);
+void iterator_prev(const array_t* array, array_iterator_t * iterator);
+
+/**** DEBUG PURPOSE ****/
+#include <stdio.h> // fprintf
+void __fprint_array__(FILE * fp, const array_t * array);
+
+#endif // LIST_H defined

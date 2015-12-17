@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+#include <gmpxx.h>
+
+
+
+int main() { // no args needed
+    mpz_class num, mod
+    std::cout << "Inserisci un numero: ";
+    std::cin >> num;
+    std::cout << "Il numero inserito è: " << num << std::endl;
+    
+    std::cout << "Inserisci un modulo (Es. 18)";
+    std::cin >> mod;
+
+    vector table<int>; 
+    return 0;
+}
