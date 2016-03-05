@@ -34,6 +34,7 @@ int dl_sum(int n, int lim) { // digit sum with limit
 	int sum = n;
 	while (sum > lim) {
 		sum = d_sum(n);
+		if (n == sum) return 0; // invalid
 		n = sum;
 	}
 	return sum;
@@ -59,10 +60,12 @@ int main() {
 	
 	total = 0.0;
 	for (i = 1; i < pags+1; i++) { // suppose extract i-th page
-		extract = dl_sum(i, num); // may nevere extract 0
-		temp = distribution(1, i, pags); // calculates probability of the extraction of the i-th page
-		ch[extract-1] += temp; // adds the probability to the extracted number
-		total += temp; // keeps a total of probabilities
+		extract = dl_sum(i, num); // chooses the number
+		if (extract) {
+			temp = distribution(1, i, pags); // calculates probability of the extraction of the i-th page
+			ch[extract-1] += temp; // adds the probability to the extracted number
+			total += temp; // keeps a total of probabilities
+		}
 	}
 	
 	// normalize the results, i.e. the sum of all the probabilityes must be 1
